@@ -208,18 +208,18 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-console.log(artists[0].name);
+console.log('task 1a', artists[0].name);
 
 
 //(2) Bio of the third artist (2nd index) in the array 
-console.log(artists[2].bio);
+console.log('task 1b', artists[2].bio);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 artists[8].name = 'Vincent Van Gogh'
-console.log(artists[8].name);
+console.log('task 2', artists[8].name);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -234,7 +234,7 @@ Use getArtistByIndex to do the following:
 function getArtistByIndex(array, number) {
   return array[number] = 'the artist at index 0 is Amedeo Modigliani'
 }
-console.log(artists[0]);
+console.log('task 3', artists[0]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -245,10 +245,16 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(array, ) {
-  /*Your Code Here*/
+function listOfNames(array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].name){
+      newArray.push(array[i].name)
+    }
+  }
+  return newArray
 }
-
+console.log('task 4', listOfNames(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -261,9 +267,14 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(array, number) {
-  return array[number].name - 1
-}
-console.log(artists[0]);
+  let newArray = [];
+  if(array[number]){
+   newArray.shift(array[number])
+  }
+ 
+  return newArray
+ }
+ console.log('Task 5', removeArtist(artists[0]));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
