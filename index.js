@@ -268,14 +268,16 @@ Use removeArtist to do the following:
 
 function removeArtist(array, number) {
   let newArray = [];
-  if(array[number]){
-   newArray.shift(array[number])
+  
+   for(let i = 0; i < array.length; i++){
+      if (i !== number) {
+          newArray.push(array[i])
+      }
+    }
+    return newArray
   }
- 
-  return newArray
- }
- console.log('Task 5', removeArtist(artists[0]));
-
+  
+console.log('task 5', removeArtist(artists,0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
